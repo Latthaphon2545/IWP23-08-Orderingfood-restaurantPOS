@@ -1,0 +1,43 @@
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    background-color: #eceaea;
+}
+
+header {
+    text-align: left;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:black;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+nav ul li a:hover{
+    color: #EA5B1E;
+    border-bottom: 1px solid #EA5B1E;
+}
