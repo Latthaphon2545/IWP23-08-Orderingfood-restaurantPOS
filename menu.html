@@ -2,54 +2,45 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
-    />
-    <!--Font: Nunito-->
     <title>Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--เผื่อใครงง this line makes the webpage responsive and adapt to the screen size of the device they are viewed on naja-->
-    <link rel="stylesheet" type="text/css" href="styles/menu-style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/menu.css" />
+    <script src="script/menu.js"></script>
   </head>
 
   <body>
-    <header>
-        <h1>Restaurant's name</h1>
-      <div class="container">
-        <div class="search-box">
-          <input type="text" class="type-search" placeholder="SEARCH">
-        </div>
+
+    <div class="top-container">
+      <h1>Menu</h1>
+      <!--search bar-->
+      <div class="search-bar">
+        <input type="text" class="type-search" placeholder="SEARCH">
       </div>
-    </header>
+      <!--my order 11-->
+      <div class="my-order-button">
+
+      </div>
+    </div>
+
     <!--nav bar-->
-    <nav>
-      <ul>
-        <li>
-          <a href="#">All</a>
-        </li>
-        <li>
-          <a href="#">Stir-fry</a>
-        </li>
-        <li>
-          <a href="#">Curry</a>
-        </li>
-        <li>
-          <a href="#">Spicy-salad</a>
-        </li>
-        <li>
-          <a href="#">Soup</a>
-        </li>
-        <li>
-          <a href="#">Drinks</a>
-        </li>
-        <li>
-          <a href="#">Fry</a>
-        </li>
-        <li>
-          <a href="#">Snacks</a>
-        </li>
-      </ul>
+    <nav id="scrolling-nav">
+      <div class="nav-content">
+        <ul>
+          <li><a href="#">All</a></li>
+          <li><a href="#">Stir-fry</a></li>
+          <li><a href="#">Curry</a></li>
+          <li><a href="#">Spicy-salad</a></li>
+          <li><a href="#">Soup</a></li>
+          <li><a href="#">Drinks</a></li>
+          <li><a href="#">Fry</a></li>
+          <li><a href="#">Snacks</a></li>
+          <li><a href="#">Dessert</a></li>
+          <li><a href="#">Other</a></li>
+        </ul>
+      </div>
     </nav>
+
+    <!--menu-->
+
   </body>
 </html>
