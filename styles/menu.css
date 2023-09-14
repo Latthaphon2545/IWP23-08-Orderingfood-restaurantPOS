@@ -1,59 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 * {
-    margin: 3px;
-    padding: 1px;
-    font-family: "Nunito", sans-serif;
+  margin: 3px;
+  padding: 1px;
+  font-family: "Nunito", sans-serif;
 }
 
 .top-container {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    justify-content: space-between;
-}
-.search-bar{
-    width: 30%;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
 }
 
-.type-search{
-    padding: 15px;
-    border: none;
-    width: 100%;
-    border-radius: 20px;
-    background-color: #d9d9d9;
+h1 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #ea5b1e;
 }
 
-#scrolling-nav {
-    overflow-x: auto;
+.search-bar {
+  display: flex;
+  width: 50%;
+  padding: 10px;
+}
+
+.type-search {
+  padding: 15px;
+  border: none;
+  width: 100%;
+  border-radius: 35px;
+  background-color: #d9d9d9;
+}
+
+.my-order {
+  align-items: center;
+}
+
+.nav-cart {
+  position: relative;
+}
+
+.item-count {
+  position: absolute;
+  top: -13px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ea5b1e;
+  color: white;
+}
+
+.nav-cart i {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.my-order-text {
+  font-weight: 500;
+  text-align: center;
+}
+
+nav.category {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
 }
 
 .nav-content {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 0;
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 0;
 }
 
 nav ul {
-    display:flex;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    font-weight: 300;
-    padding: 8px 15px;
-    white-space: nowrap;
-    transition: all 200ms;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 15px;
+  white-space: nowrap;
+  transition: all 200ms;
 }
 
 nav ul li a:hover {
-    color: #EA5B1E;
-    border-bottom: 1px solid #EA5B1E;
+  color: #ea5b1e;
+  border-bottom: 1px solid #ea5b1e;
+}
+
+nav ul li a.active {
+  color: #ea5b1e;
+  border-bottom: 1px solid #ea5b1e;
+}
+
+.menu-container {
+  font-size: 18px;
+  font-weight: 500;
+  width: auto;
+  display: flex;
+  margin: 0 auto;
+  background: #da9c82;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "omelet fried-chicken"
+    "curry basil";
+}
+.omelet {
+  grid-area: omelet;
+}
+.fried-chicken {
+  grid-area: fried-chicken;
+}
+.curry {
+  grid-area: curry;
+}
+.basil {
+  grid-area: basil;
 }

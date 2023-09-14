@@ -5,25 +5,37 @@
     <title>Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <script src="script/menu.js"></script>
   </head>
 
   <body>
-
     <div class="top-container">
       <h1>Menu</h1>
       <!--search bar-->
       <div class="search-bar">
-        <input type="text" class="type-search" placeholder="SEARCH">
+        <input type="text" class="type-search" placeholder="SEARCH" />
       </div>
-      <!--my order 11-->
-      <div class="my-order-button">
 
+      <!--my order-->
+      <div class="my-order">
+        <div class="nav-cart">
+          <i class="fas fa-cart-shopping" style="color: #ea5b1e"></i>
+          <div class="item-count">
+            <p>0</p>
+          </div>
+        </div>
+        <div class="my-order-text">
+          <p>My Order</p>
+        </div>
       </div>
     </div>
 
     <!--nav bar-->
-    <nav id="scrolling-nav">
+    <nav class="category">
       <div class="nav-content">
         <ul>
           <li><a href="#">All</a></li>
@@ -41,6 +53,23 @@
     </nav>
 
     <!--menu-->
-
+    <div class="menu-container">
+      <div class="omelet">
+        <img src="images/Thai-Omelette-HP-191008.jpg" alt="omelet" style="width: 160px; height: 100px;"/>
+        <p>Omelet</p>
+      </div>
+      <div class="fried-chicken">
+        <img src="images/fried-chicken.jpg" alt="fried-chicken" style="width: 160px; height: 100px;"/>
+        <p>Fried-chicken
+      </div>
+      <div class="curry">
+        <img src="images/stir-fry-with-curry.jpg" alt="stir-fry-curry" style="width: 160px; height: 100px;"/>
+        <p>Stir fry with curry</p>
+      </div>
+      <div class="basil">
+        <img src="images/stir-fried-thai-basil-with-minced-pork-topped-rice_1339-99876.avif" alt="stir-fry-basil" style="width: 160px; height: 100px;"/>
+        <p>Stir fry with basil</p> 
+      </div>
+    </div>
   </body>
 </html>
