@@ -11,10 +11,11 @@
   align-items: center;
   justify-content: space-around;
   padding: 10px;
+  position: sticky;
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 5vw;
   font-weight: 700;
   color: #ea5b1e;
 }
@@ -26,11 +27,18 @@ h1 {
 }
 
 .type-search {
-  padding: 15px;
+  font-size: 1.2vw;
+  padding: 10px;
   border: none;
   width: 100%;
+  outline: none;
   border-radius: 35px;
   background-color: #d9d9d9;
+  transition: 0.3s;
+}
+
+.type-search:focus {
+  border: 1px solid #ea5b1e;
 }
 
 .my-order {
@@ -62,6 +70,7 @@ h1 {
 }
 
 .my-order-text {
+  font-size: 2vw;
   font-weight: 500;
   text-align: center;
 }
@@ -69,7 +78,8 @@ h1 {
 nav.category {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
+  padding: 10px 15px;
+  position: sticky;
 }
 
 .nav-content {
@@ -108,30 +118,29 @@ nav ul li a.active {
 }
 
 .menu-container {
-  font-size: 18px;
-  font-weight: 500;
-  width: auto;
-  display: flex;
-  margin: 0 auto;
-  background: #da9c82;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "omelet fried-chicken"
-    "curry basil";
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
 }
-.omelet {
-  grid-area: omelet;
+
+.menu-items {
+  font-size: 18px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: auto;
 }
-.fried-chicken {
-  grid-area: fried-chicken;
+
+.menu-items img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: #85838a 5px 5px 10px;
 }
-.curry {
-  grid-area: curry;
-}
-.basil {
-  grid-area: basil;
+
+.price {
+  font-weight: 900;
+  font-size: 14px;
+  color: #ea5b1e;
 }
