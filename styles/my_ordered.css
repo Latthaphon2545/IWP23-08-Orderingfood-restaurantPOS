@@ -38,7 +38,13 @@ h1{
     box-shadow: #85838a 2.5px 2.5px 5px;
   }
 
-.head{
-    border: 1px solid black;
-    display: ;
+.pay{
+    background-color: #ea5b1e;
+    color: white;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 30px 20px;
 }
