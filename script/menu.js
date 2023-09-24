@@ -151,10 +151,15 @@ function closefooddetail() {
 }
 
 function openCart() {
-  $('#modalCart').css('display','flex')
+  $('#cart').css('display','block')
   hide_show_EverythingExceptDetail('hide');
 }
 
-function addtocart(){
-  console.log("add to cart")
+function rendercart(){
+  // หยุดก่อน ค่อยทำพนต่อ
+}
+
+function closeCart() {
+  $('#cart').css('display','none')
+  hide_show_EverythingExceptDetail('show');
 }
