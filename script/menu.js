@@ -79,7 +79,7 @@ function searchsomething(elem) {
 }
 
 function searchproduct(param) {
-  console.log(param)
+  // console.log(param)
   $(".menu-items").css('display', 'none')
   if(param == 'all') {
       $(".menu-items").css('display', 'block')
@@ -150,20 +150,15 @@ function closefooddetail() {
   hide_show_EverythingExceptDetail('show');
 }
 
-function openCart() {
-  $('#cart').css('display','block')
-  hide_show_EverythingExceptDetail('hide');
-}
-
 var cart = [];
 function addtocart(){
-  console.log("add to cart")
+  // console.log("add to cart")
   var pass = true;
     for (let i = 0; i < cart.length; i++) {
         if( productindex == cart[i].index ) {
-            console.log('found same product')
+            // console.log('found same product')
             cart[i].count++;
-            console.log(cart[i].count)
+            // console.log(cart[i].count)
             pass = false;
         }
     }
@@ -182,21 +177,79 @@ function addtocart(){
           price: product[productindex].price,
           img: product[productindex].img,
           addon: addon,
-          note: note,
           count: 1
       };
       // console.log(obj)
       cart.push(obj)
   }
-  console.log(cart)
+  // console.log(cart)
   $("#cartcount").css('display','flex').text(cart.length)
 }
 
+function openCart() {
+  $('#cart').css('display','block')
+  hide_show_EverythingExceptDetail('hide');
+  rendercart();
+}
+
 function rendercart(){
-  // หยุดก่อน ค่อยทำพนต่อ
+  if(cart.length > 0){
+    var html = '';
+        for (let i = 0; i < cart.length; i++){
+            html += ` <div class="ordered-list">
+                      <img src="${cart[i].img}" style="width: 110px; height: 70px;">
+                      <div class="detail">
+                          <div class="food-name">
+                              <p>${cart[i].name}</p>
+                          </div>           
+                          <div class="price">
+                              <p>${numberWithCommas(cart[i].price * cart[i].count)}</p>
+                          </div>
+                          <div class="add-ons">
+                            <p>${cart[i].addon}</p>
+                          </div>
+                          <!-- <div class="toppings">
+                            <p>minced pork</p>
+                          </div> -->
+                      </div>
+                      <div class="updown-count">
+                        <p class="sign" onclick="deinitems('-', ${i})">-</p>
+                        <p id="countitems">${cart[i].count}</p>
+                        <p class="sign" onclick="deinitems('+', ${i})">+</p>
+                      </div>
+                      </div>`
+        }
+        $("#mylist").html(html);
+  }
+  else {
+    $("#mylist").html(`<p>Not found product</p>`);
+  }
 }
 
 function closeCart() {
   $('#cart').css('display','none')
   hide_show_EverythingExceptDetail('show');
+}
+
+function deinitems(action, index) {
+  if(action == '-') {
+      if(cart[index].count > 0) {
+          cart[index].count--;
+          $("#countitems"+index).text(cart[index].count)
+      }
+        if (cart[index].count <= 0) {
+            var confirm_delete = confirm("Do you want to delete this item?");
+            if (confirm_delete) {
+                cart.splice(index, 1);
+            }
+            else {
+                cart[index].count = 1;
+            }
+        }
+  }
+  else if(action == '+') {
+      cart[index].count++;
+      $("#countitems"+index).text(cart[index].count)
+  }
+  rendercart();
 }

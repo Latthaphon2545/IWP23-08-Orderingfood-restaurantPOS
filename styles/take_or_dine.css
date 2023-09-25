@@ -51,7 +51,7 @@ body{
     border-radius: 10px;
     margin: 200px 75px 10px;
     padding: 30px;
-    display: none;
+    /* display: none; */
 }
 
 .dine-in-afterclick{
@@ -62,5 +62,9 @@ body{
     border-radius: 10px;
     margin: 50px 75px 50px;
     padding: 30px;
-    display: none;
+    /* display: none; */
+}
+
+#table{
+    position: relative;
 }
