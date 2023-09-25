@@ -2,6 +2,7 @@
 
 body {
     font-family: "Nunito", sans-serif;
+    margin: 10px;
   }
 h1{
     text-align: center;
@@ -15,21 +16,23 @@ h1{
 
 .ordered-list{
     display: flex;
-    padding: 1px 20px;
+    padding: 1px 8px;
     align-items: center;
     text-align: left;
+    margin: 0px;
+    border: 1px solid black;/*อย่าลืมลบ*/
+    
+    /* padding: 0%; */
     /* border: 1px solid black; อย่าลืมลบเด้อ */
 }
 
 .detail{
     display: block;
-    padding: 20px;
+    padding: 5px 15px;
 }
 
 .price{
-    flex: 1; /*This will make the price take up the remaining space in the flex container */
-    text-align: left; /* Align the text to the right */
-    padding-right: 10px;
+    font-weight: bolder;
 }
 
 .ordered-list img{
@@ -47,4 +50,13 @@ h1{
     left: 0;
     right: 0;
     margin: 30px 20px;
+}
+
+.food-name, .price, .add-ons {
+    margin: -10px 3px;
+    padding: -10px;
+}
+
+.add-ons, .toppings{
+    font-size: x-small;
 }
