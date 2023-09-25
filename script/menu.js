@@ -155,6 +155,42 @@ function openCart() {
   hide_show_EverythingExceptDetail('hide');
 }
 
+var cart = [];
+function addtocart(){
+  console.log("add to cart")
+  var pass = true;
+    for (let i = 0; i < cart.length; i++) {
+        if( productindex == cart[i].index ) {
+            console.log('found same product')
+            cart[i].count++;
+            console.log(cart[i].count)
+            pass = false;
+        }
+    }
+    if(pass) {
+      var checkbox_addon = document.querySelectorAll("#addon input");
+      var addon = [];
+      for(let i = 0; i < checkbox_addon.length; i++) {
+        if(checkbox_addon[i].checked) {
+          addon.push(checkbox_addon[i].value)
+        }
+      }
+      var obj = {
+          index: productindex,
+          id: product[productindex].id,
+          name: product[productindex].name,
+          price: product[productindex].price,
+          img: product[productindex].img,
+          addon: addon,
+          count: 1
+      };
+      // console.log(obj)
+      cart.push(obj)
+  }
+  console.log(cart)
+  $("#cartcount").css('display','flex').text(cart.length)
+}
+
 function rendercart(){
   // หยุดก่อน ค่อยทำพนต่อ
 }
