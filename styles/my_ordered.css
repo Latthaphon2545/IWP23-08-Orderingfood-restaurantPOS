@@ -20,7 +20,7 @@ h1{
     align-items: center;
     text-align: left;
     margin: 0px;
-    border: 1px solid black;/*อย่าลืมลบ*/
+    /* border: 1px solid black; */
     
     /* padding: 0%; */
     /* border: 1px solid black; อย่าลืมลบเด้อ */
@@ -59,4 +59,19 @@ h1{
 
 .add-ons, .toppings{
     font-size: x-small;
+}
+
+.updown-count{
+    display: flex;
+    align-items: center;
+}
+
+.sign{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
