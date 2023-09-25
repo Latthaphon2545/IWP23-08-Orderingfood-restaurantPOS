@@ -182,6 +182,7 @@ function addtocart(){
           price: product[productindex].price,
           img: product[productindex].img,
           addon: addon,
+          note: note,
           count: 1
       };
       // console.log(obj)
