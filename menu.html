@@ -5,10 +5,10 @@
     <title>Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles/menu.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="styles/my_ordered.css" />
+    <link rel="stylesheet" type="text/css" href="styles/detail.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="script/menu.js"></script>
   </head>
 
@@ -17,11 +17,12 @@
       <h1>Menu</h1>
       <!--search bar-->
       <div class="search-bar">
-        <input type="text" class="type-search" placeholder="SEARCH" />
+        <input type="text" class="type-search" placeholder="SEARCH" onkeyup="searchsomething(this)" id="tet_search"/>
       </div>
+      <!--search bar-->
 
       <!--my order-->
-      <div class="my-order">
+      <div class="my-order" onclick="openCart()">
         <div class="nav-cart">
           <i class="fas fa-cart-shopping" style="color: #ea5b1e"></i>
           <div class="item-count">
@@ -33,110 +34,89 @@
         </div>
       </div>
     </div>
+    <!--my order-->
 
     <!--nav bar-->
     <nav class="category">
       <div class="nav-content">
         <ul>
-          <li><a href="#">All</a></li>
-          <li><a href="#">Stir-fry</a></li>
-          <li><a href="#">Curry</a></li>
-          <li><a href="#">Spicy-salad</a></li>
-          <li><a href="#">Soup</a></li>
-          <li><a href="#">Drinks</a></li>
-          <li><a href="#">Fry</a></li>
-          <li><a href="#">Snacks</a></li>
-          <li><a href="#">Dessert</a></li>
-          <li><a href="#">Other</a></li>
+          <li><a onclick="searchproduct('all')" href="#">All</a></li>
+          <li><a onclick="searchproduct('stir-fry')" href="#">Stir-fry</a></li>
+          <li><a onclick="searchproduct('curry')" href="#">Curry</a></li>
+          <li><a onclick="searchproduct('spicy-salad')" href="#">Spicy-salad</a></li>
+          <li><a onclick="searchproduct('soup')" href="#">Soup</a></li>
+          <li><a onclick="searchproduct('drinks')" href="#">Drinks</a></li>
+          <li><a onclick="searchproduct('fry')" href="#">Fry</a></li>
+          <li><a onclick="searchproduct('snacks')" href="#">Snacks</a></li>
+          <li><a onclick="searchproduct('dessert')" href="#">Dessert</a></li>
+          <li><a onclick="searchproduct('other')" href="#">Other</a></li>
         </ul>
       </div>
     </nav>
+    <!--nav bar-->
 
     <!--menu-->
-    <div class="menu-container">
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/Thai-Omelette-HP-191008.jpg"
-          alt="omelet"
-        />
-        <p style="font-size: 4vw">Omelet</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">50</p>
+    <div class="menu-container" id="productlist">
+      <!-- In JS -->
+    </div>
+    <!--menu-->
+
+    <!-- detail -->
+    <div id="fooddetail" class="food-detail" style="display: none;">
+      <div class="close">
+        <i class="fas fa-times" onclick="closefooddetail()"></i>
+      </div>
+      <div class="food-img">
+        <img id="mdd-img" src="images/stir-fried-thai-basil-with-minced-pork-topped-rice_1339-99876.avif" alt="stir-fry-basil">
+      </div>
+        <div class="title-box">
+            <p id="name">Stir-fried basil with rice</p>
+            <p id="price">50</p>
+        </div>
+        <div class="description-box">
+            <p>Add-on</p>
+            <ul id="addon">
+                <!-- in js -->
+            </ul>
+        </div>
+        <div class="button-box">
+            <button id="place-order" onclick="addtocart()">Place Order</button>
+        </div>
+    </div>
+    <!-- detail -->
+
+    <!-- cart -->
+    <div id="cart" class="cart" style="display: none;">
+      <!-- HEAD CONTAINER -->
+      <div class="head-container">
+        <div class="head" onclick="closeCart()">
+            <img src="images/close.png" alt="close" style="width: 20px; height: 20px;">
         </div>
       </div>
 
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/fried-chicken.jpg"
-          alt="fried-chicken"
-        />
-        <p style="font-size: 4vw">Fried-chicken</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">60</p>
-        </div>
+      <div class="head">
+          <h1>My Ordered</h1>
       </div>
 
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/stir-fry-with-curry.jpg"
-          alt="stir-fry-curry"
-        />
-        <p style="font-size: 4vw">Stir fry with curry</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">50</p>
-        </div>
+      <!-- ORDERED LIST -->
+      <div class="ordered-container">
+          <div class="ordered-list">
+              <img src="images/Thai-Omelette-HP-191008.jpg" alt="Thai-Omelette" style="width: 110px; height: 70px;">
+              <div class="detail">
+                  <div class="food-name">
+                      <p>Omelette</p>
+                  </div>           
+                  <div class="price">
+                      <p>50</p>
+                  </div>
+          </div>
       </div>
 
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/stir-fried-thai-basil-with-minced-pork-topped-rice_1339-99876.avif"
-          alt="stir-fry-basil"
-        />
-        <p style="font-size: 4vw">Stir fry with basil</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">50</p>
-        </div>
-      </div>
-
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/tom-yum-kung.jpg"
-          alt="tom-yum-kung"
-        />
-        <p style="font-size: 4vw">Tom Yum Kung</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">60</p>
-        </div>
-      </div>
-
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/papaya-salad.jpg"
-          alt="papaya-salad"
-        />
-        <p style="font-size: 4vw">Papaya Salad</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">75</p>
-        </div>
-      </div>
-
-      <div class="menu-items">
-        <img
-          class="menu-img"
-          src="images/stir-fry-pork-belly.jpg"
-          alt="stir-fry-pork-belly"
-        />
-        <p style="font-size: 4vw">Stir fry Pork Belly</p>
-        <div class="price">
-          <p style="font-size: 3.5vw">70</p>
-        </div>
+      <div class="pay-container">
+          <h1 class="pay">pay</h1>
       </div>
     </div>
+    <!-- cart -->
+
   </body>
 </html>
