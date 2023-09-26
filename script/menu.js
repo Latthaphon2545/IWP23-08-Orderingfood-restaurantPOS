@@ -109,7 +109,9 @@ function hide_show_EverythingExceptDetail(P) {
 }
 
 var productindex = 0;
-function openProductDetail(index) {
+function openProductDetail(index,product) {
+    // conver index string to number
+    index = Number(index);
     productindex = index; 
     // Hide everything except the detail element
     hide_show_EverythingExceptDetail('hide');
