@@ -5,7 +5,7 @@ const product = [
     name: 'Omelet',
     price: 50,
     type: 'fry',
-    AddOn: ['Egg', 'Onion', 'Tomato', 'Chili', 'Salt', 'Pepper']
+    AddOn: ['Egg', 'Onion', 'Tomato', 'Chili', 'Salt', 'Pepper', 'Rice']
   },
   {
     id: 2,

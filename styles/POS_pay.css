@@ -160,3 +160,17 @@ h1 {
 .total-container h2{
     font-size: 25px;
 }
+
+.footer a i{
+  padding: 10px;
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-around;
+}

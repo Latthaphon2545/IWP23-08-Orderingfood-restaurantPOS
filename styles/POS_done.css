@@ -148,3 +148,17 @@ h1 {
 .cover-box{
     display: flex;
 }
+
+.footer a i{
+  padding: 10px;
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-around;
+}
