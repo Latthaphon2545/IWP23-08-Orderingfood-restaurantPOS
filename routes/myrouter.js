@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/products');
 
-
-
 router.get('/menu', async (req, res) => {
     Product.find({}).then((products) => {
         res.render('menu', { products: products })

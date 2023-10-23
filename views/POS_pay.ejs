@@ -57,7 +57,7 @@
       orders_pay = JSON.parse(localStorage.getItem("orders_pay"));
     }
 
-    const socket = io.connect('https://hmv8210m-8000.asse.devtunnels.ms');
+    const socket = io.connect('http://localhost:9000');
     const show = document.querySelector('.cover-box');
 
     socket.on('pay', (doneOrder) => {
@@ -320,7 +320,7 @@
       // Close the receipt when clicking on the "Close" element
       const close = document.querySelector('#Close');
       close.addEventListener('click', () => {
-          if(!confirm('Are you done?')) return;
+          if(!confirm('จ่ายเงิน?')) return;
           receipt.style.display = 'none';
           res.style.display = '';
           window.location.reload();
@@ -330,7 +330,7 @@
     function genQR(amount_cus) {
             $.ajax({
                 method: 'post',
-                url: 'https://hmv8210m-8000.asse.devtunnels.ms/generateQR',
+                url: 'http://localhost:9000/generateQR',
                 data: {
                     amount: amount_cus
                 },
@@ -347,7 +347,6 @@
     function addToCart(orders_pay_now) {
       const res = document.querySelector('.res');
       const addOther = document.querySelector('.addOther');
-      if(!confirm('Are you done?')) return;
       const foodtext = document.querySelector('.add-food-text').value;
       const food = document.querySelector('.add-food').value;
       const rice = document.querySelector('.add-rice').value;
@@ -357,6 +356,18 @@
       const alcohol = document.querySelector('.add-alcohol').value;
       const soda = document.querySelector('.add-soda').value;
       const reduce = document.querySelector('.add-Reduce').value;
+      // check input food, rice, water, ice, bear, alcohol, soda, reduce is number
+      if(isNaN(food) || isNaN(rice) || isNaN(water) || isNaN(ice) || isNaN(bear) || isNaN(alcohol) || isNaN(soda) || isNaN(reduce)) {
+        alert("กรุณากรอกตัวเลข");
+        return;
+      }
+      // check input food is empty and price is not empty and food is not empty and price is empty
+      if((foodtext === '' && food !== '') || (foodtext !== '' && food === '')) {
+        alert("กรุณากรอกชื่ออาหารและราคา");
+        return;
+      }
+      
+      if(!confirm("เพิ่ม?")) return;
       // convert string to float
       const Food = parseFloat(food);
       const Rice = parseFloat(rice);

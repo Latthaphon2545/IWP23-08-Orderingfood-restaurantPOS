@@ -8,13 +8,10 @@ const QRCode = require('qrcode');
 const generatePayload = require('promptpay-qr');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
+const PORT = 9000;
 
 // Use the cors middleware with specific origin and options
-app.use(cors({
-    origin: 'https://hmv8210m-9000.asse.devtunnels.ms', // Replace with your frontend's origin
-    methods: 'GET,POST', // Specify the allowed HTTP methods
-    credentials: true, // Allow cookies and credentials to be sent with the request
-}));
+app.use(cors());
 
 app.use(router);
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const server = app.listen(9000, () => {
-    console.log('Server is running on port 9000');
+const server = app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 const io = socketIO(server);
