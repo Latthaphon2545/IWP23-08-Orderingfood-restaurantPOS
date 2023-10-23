@@ -1,30 +1,22 @@
-// use mongoose
 const mongoose = require('mongoose');
 
-// connect to MongoDB
-const dbURI = 'mongodb://localhost:27017/productDB';
-mongoose.connect(dbURI, { 
+const dbURL = 'mongodb://localhost:27017/Web';
+mongoose.connect(dbURL, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
-}).catch(err => console.log(err));
+}).catch(err => {console.log('Connection error', err.message);});
 
-// create a schema
-let productSchema = mongoose.Schema({
+// Get information product from database that already exists, no need to create a new one
+const ProductSchema = new mongoose.Schema({
     id: Number,
     img: String,
     name: String,
     price: Number,
     type: String,
-    addon: Array,
+    AddOn: Array
 });
 
-// create a model
-let Product = mongoose.model('products', productSchema);
+const Product = mongoose.model('Product', ProductSchema, 'products');
 
-// export the model
 module.exports = Product;
 
-// save a new document
-module.exports.saveProduct = function(model, data){
-    model.save(data)
-}

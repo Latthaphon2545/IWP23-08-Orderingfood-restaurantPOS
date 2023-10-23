@@ -12,6 +12,8 @@ h1{
 
 .ordered-container {
     display: grid;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 .ordered-list{
@@ -20,10 +22,7 @@ h1{
     align-items: center;
     text-align: left;
     margin: 0px;
-    /* border: 1px solid black; */
-    
-    /* padding: 0%; */
-    /* border: 1px solid black; อย่าลืมลบเด้อ */
+    justify-content: space-between;
 }
 
 .detail{
@@ -39,6 +38,8 @@ h1{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     box-shadow: #85838a 2.5px 2.5px 5px;
+    max-width: 20vw;
+    max-height: 20vh;
 }
 
 .total-container{
@@ -88,3 +89,4 @@ h1{
 .second-line{
     display: flex;
 }
+
