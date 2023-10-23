@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "Dockerfile",
-            "name": "app.js"
+            "use": "app.js"
         }
     ],
     "routes": [
