@@ -14,7 +14,7 @@ const PORT = 9000;
 app.use(cors());
 
 app.use(router);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
