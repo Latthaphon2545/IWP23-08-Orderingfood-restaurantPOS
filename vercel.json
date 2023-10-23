@@ -1,0 +1,15 @@
+{
+    "version": "2",
+    "builds": [
+        {
+            "src": "Dockerfile",
+            "name": "app.js"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.js"
+        }
+    ]
+}
