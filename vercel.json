@@ -2,8 +2,8 @@
     "version": 2,
     "builds": [
         {
-            "src": "Dockerfile",
-            "use": "app.js"
+            "src": "./app.js",
+            "use": "@now/node-server"
         }
     ],
     "routes": [
