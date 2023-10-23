@@ -16,7 +16,7 @@ router.get('/Restaurant_pay', (req, res) => {
   res.render('POS_pay');
 });
 
-router.get('/take_or_dine', (req, res) => {
+router.get('/', (req, res) => {
     res.render('take_or_dine');
 });
 
