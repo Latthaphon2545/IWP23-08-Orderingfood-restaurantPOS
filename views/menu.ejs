@@ -46,7 +46,7 @@
     <nav class="category">
       <div class="nav-content">
         <ul>
-          <li><a onclick="searchproduct('all')" href="#">ทั้งหมด</a></li>
+          <li><a onclick="searchproduct('all')" href="#" class="active">ทั้งหมด</a></li>
           <li><a onclick="searchproduct('stir-fry')" href="#">ผัด</a></li>
           <li><a onclick="searchproduct('curry')" href="#">เครื่องแกง</a></li>
           <li><a onclick="searchproduct('spicy-salad')" href="#">ยำ</a></li>
@@ -90,8 +90,8 @@
             <p id="name">Stir-fried basil with rice</p>
             <p id="price">50</p>
         </div>
+        <p style="font-weight: 600;font-size: 1rem;">Add-on</p>
         <div class="description-box">
-            <p>Add-on</p>
             <ul id="addon">
                 <!-- in js -->
             </ul>
@@ -140,7 +140,7 @@
   </body>
 
   <script>
-      const socket = io.connect('https://hmv8210m-9000.asse.devtunnels.ms');
+      const socket = io.connect('https://hmv8210m-8000.asse.devtunnels.ms');
       const customerNameElement = document.getElementById('customer-name');
       // check if customer name is not number
       const cus_localStorage = localStorage.getItem("cus");
@@ -221,6 +221,11 @@
       }
 
       function searchproduct(param) {
+        const activeLink = document.querySelector('.nav-content ul li a.active');
+        // Remove the "active" class from the found category link
+        if (activeLink) {
+            activeLink.classList.remove('active');
+        }
         $(".menu-items").css('display', 'none')
         if(param == 'all') {
             $(".menu-items").css('display', 'block')

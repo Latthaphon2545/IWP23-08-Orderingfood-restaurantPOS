@@ -19,7 +19,7 @@
   <body>
     <div class="res">
       <div class="top-container">
-        <h1>เจ้าจักร ข้าวต้มโต้รุ่ง</h1>
+        <h1>เจ้าจักร ข้าวต้มโต้รุ่ง(จ่ายเงิน)</h1>
       </div>
 
       <div class="main-container">
@@ -37,7 +37,7 @@
         </a>
         <!-- cash icon -->
         <a href="/restaurant_pay" target="_blank">
-          <i class="fa-solid fa-cash-register" style="color: #000000"></i>
+          <i class="fa-solid fa-cash-register" style="color: #ea5b1e"></i>
         </a>
       </div>
   </div>
@@ -57,7 +57,7 @@
       orders_pay = JSON.parse(localStorage.getItem("orders_pay"));
     }
 
-    const socket = io.connect('https://hmv8210m-9000.asse.devtunnels.ms');
+    const socket = io.connect('https://hmv8210m-8000.asse.devtunnels.ms');
     const show = document.querySelector('.cover-box');
 
     socket.on('pay', (doneOrder) => {
